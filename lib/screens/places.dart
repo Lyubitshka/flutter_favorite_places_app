@@ -27,7 +27,7 @@ class _PlacesScreenState extends ConsumerState<PlacesScreen> {
     return Scaffold(
       appBar: AppBar(
         title: const Text(
-          'Your Places',
+          '🌍    My Favorite Places    🌍',
         ),
         actions: [
           IconButton(

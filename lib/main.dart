@@ -5,14 +5,21 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:fav_places_9_project/screens/places.dart';
 
 final colorScheme = ColorScheme.fromSeed(
-  brightness: Brightness.dark,
-  seedColor: const Color.fromARGB(255, 102, 6, 247),
-  background: const Color.fromARGB(255, 56, 49, 66),
+  brightness: Brightness.light,
+  seedColor: Color.fromARGB(255, 30, 123, 66),
+  background: Colors.white,
 );
 
 final theme = ThemeData().copyWith(
-  useMaterial3: true,
   scaffoldBackgroundColor: colorScheme.background,
+  appBarTheme: AppBarTheme(
+    color: Color.fromARGB(255, 119, 214, 122),
+    centerTitle: true,
+    shape: ContinuousRectangleBorder(
+      borderRadius: BorderRadius.circular(42),
+    ),
+    toolbarHeight: 84,
+  ),
   colorScheme: colorScheme,
   textTheme: GoogleFonts.ubuntuCondensedTextTheme().copyWith(
     titleSmall: GoogleFonts.ubuntuCondensed(
@@ -36,12 +43,12 @@ void main() {
 }
 
 class MyApp extends StatelessWidget {
-  const MyApp({Key? key}) : super(key: key);
+  const MyApp({super.key});
 
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Great Places',
+      title: 'My favourite places',
       theme: theme,
       home: const PlacesScreen(),
     );
