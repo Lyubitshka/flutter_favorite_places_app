@@ -19,6 +19,7 @@ class PlacesDetailsScreen extends ConsumerWidget {
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     return Scaffold(
+      extendBodyBehindAppBar: true,
       appBar: AppBar(
         title: Text(place.title),
       ),
@@ -66,8 +67,8 @@ class PlacesDetailsScreen extends ConsumerWidget {
                     place.location.address,
                     textAlign: TextAlign.center,
                     style: Theme.of(context).textTheme.titleLarge!.copyWith(
-                          color: Theme.of(context).colorScheme.onBackground,
-                        ),
+                        color: Theme.of(context).colorScheme.onInverseSurface,
+                        fontSize: 36),
                   ),
                 ),
               ],

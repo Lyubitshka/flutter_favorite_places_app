@@ -25,22 +25,36 @@ class _PlacesScreenState extends ConsumerState<PlacesScreen> {
   Widget build(BuildContext context) {
     final userPlaces = ref.watch(userPlacesProvider);
     return Scaffold(
+      floatingActionButton: FloatingActionButton.extended(
+        label: const Text(
+          'Add',
+          style: TextStyle(fontSize: 24),
+        ),
+        icon: const Icon(Icons.add, color: Colors.black, size: 28),
+        onPressed: () {
+          Navigator.of(context).push(
+            MaterialPageRoute(
+              builder: (ctx) => const AddPlaceScreen(),
+            ),
+          );
+        },
+      ),
       appBar: AppBar(
         title: const Text(
-          '🌍    My Favorite Places    🌍',
+          ' My Favorite Places',
         ),
-        actions: [
-          IconButton(
-            onPressed: () {
-              Navigator.of(context).push(
-                MaterialPageRoute(
-                  builder: (ctx) => const AddPlaceScreen(),
-                ),
-              );
-            },
-            icon: const Icon(Icons.add_circle_rounded),
-          ),
-        ],
+        // actions: [
+        //   IconButton(
+        //     onPressed: () {
+        //       Navigator.of(context).push(
+        //         MaterialPageRoute(
+        //           builder: (ctx) => const AddPlaceScreen(),
+        //         ),
+        //       );
+        //     },
+        //     icon: const Icon(Icons.add_circle_rounded),
+        //   ),
+        // ],
       ),
       body: Padding(
         padding: const EdgeInsets.all(8.0),

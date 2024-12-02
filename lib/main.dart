@@ -8,30 +8,33 @@ import 'package:fav_places_9_project/screens/places.dart';
 final colorScheme = ColorScheme.fromSeed(
   brightness: Brightness.light,
   seedColor: const Color.fromARGB(255, 30, 123, 66),
-  background: Colors.white,
+  surface: Colors.white,
 );
 
 final theme = ThemeData().copyWith(
-  scaffoldBackgroundColor: colorScheme.background,
-  appBarTheme: AppBarTheme(
-    color: const Color.fromARGB(255, 119, 214, 122),
+  // scaffoldBackgroundColor: colorScheme.surface,
+  appBarTheme: const AppBarTheme(
+    color: Color.fromARGB(255, 119, 214, 122),
     centerTitle: true,
     shape: ContinuousRectangleBorder(
-      borderRadius: BorderRadius.circular(42),
+      borderRadius: BorderRadius.only(
+        bottomRight: Radius.circular(120),
+        bottomLeft: Radius.circular(120),
+      ),
     ),
-    toolbarHeight: 84,
+    toolbarHeight: 90,
   ),
   colorScheme: colorScheme,
   textTheme: GoogleFonts.ubuntuCondensedTextTheme().copyWith(
     titleSmall: GoogleFonts.ubuntuCondensed(
-      fontWeight: FontWeight.bold,
-    ),
+        // fontWeight: FontWeight.bold,
+        ),
     titleMedium: GoogleFonts.ubuntuCondensed(
-      fontWeight: FontWeight.bold,
-    ),
+        // fontWeight: FontWeight.bold,
+        fontSize: 36),
     titleLarge: GoogleFonts.ubuntuCondensed(
-      fontWeight: FontWeight.bold,
-    ),
+        // fontWeight: FontWeight.bold,
+        ),
   ),
 );
 
@@ -50,7 +53,8 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'My favourite places',
+      title: 'My favorite places',
+      debugShowCheckedModeBanner: false,
       theme: theme,
       home: const PlacesScreen(),
     );

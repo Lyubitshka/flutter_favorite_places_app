@@ -27,17 +27,24 @@ class _MapScreenState extends State<MapScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      extendBodyBehindAppBar: true,
       appBar: AppBar(
           title: Text(
             widget.isSelecting ? 'Pick your location' : 'Your location',
           ),
           actions: [
             if (widget.isSelecting)
-              IconButton(
-                onPressed: () {
-                  Navigator.of(context).pop(_pickedLocation);
-                },
-                icon: const Icon(Icons.save),
+              Padding(
+                padding: const EdgeInsets.only(right: 25),
+                child: IconButton(
+                  onPressed: () {
+                    Navigator.of(context).pop(_pickedLocation);
+                  },
+                  icon: const Icon(
+                    Icons.save,
+                    size: 36,
+                  ),
+                ),
               )
           ]),
       body: GoogleMap(
